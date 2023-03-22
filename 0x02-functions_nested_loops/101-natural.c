@@ -18,3 +18,11 @@ void print_multiples_of_3_or_5(void)
 	}
 	printf("%d\n", sum);
 }
+/**
+ * main-entry point
+ * Return:- 0 on success
+ */
+int main(void)
+{
+	print_multiples_of_3_or_5();
+}
