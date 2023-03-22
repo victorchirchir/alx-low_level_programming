@@ -25,4 +25,5 @@ void print_multiples_of_3_or_5(void)
 int main(void)
 {
 	print_multiples_of_3_or_5();
+	return (0);
 }
