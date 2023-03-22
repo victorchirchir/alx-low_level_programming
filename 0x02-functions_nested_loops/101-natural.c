@@ -16,5 +16,5 @@ void print_multiples_of_3_or_5(void)
 			sum = sum + i;
 		}
 	}
-	printf("%d\n");
+	printf("%d\n", sum);
 }
