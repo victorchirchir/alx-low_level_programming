@@ -5,13 +5,13 @@
  */
 void print_50_Fibonacci_numbers(void)
 {
-	int first = 1, second = 2, next, i;
+	long int first = 1, second = 2, next, i;
 
-	printf("%d, %d", first, second);
+	printf("%ld, %ld", first, second);
 	for (i = 0; i < 48; i++)
 	{
 		next = first + second;
-		printf(", %d", next);
+		printf(", %ld", next);
 		first = second;
 		second = next;
 	}
