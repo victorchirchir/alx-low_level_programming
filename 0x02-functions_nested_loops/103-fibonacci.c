@@ -5,7 +5,7 @@
  */
 int main(void)
 {
-	long int first = 1, second = 2, next, even = 2, i;
+	long int first = 1, second = 2, next, even = 2;
 
 	while (second <= 4000000)
 	{
@@ -18,7 +18,7 @@ int main(void)
 		first = second;
 		second = next;
 	}
-	printf("%ld\ni", even);
+	printf("%ld\n", even);
 	return (0);
 }
 
