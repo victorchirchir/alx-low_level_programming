@@ -20,7 +20,7 @@ int main(void)
 		}
 		else
 		{
-			f++
+			f++;
 		}
 	}
 	printf("%ld\n", lf);
