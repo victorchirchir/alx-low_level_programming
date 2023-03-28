@@ -10,12 +10,10 @@
 int main(void)
 {
 	char password[PASSWORD_LENGTH + 1];
-
-	srand(time(NULL));
-
 	char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 	int i;
 
+	srand(time(NULL));
 	for (i = 0; i < PASSWORD_LENGTH; i++)
 	{
 		int index;
