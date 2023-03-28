@@ -3,25 +3,25 @@
 #include <stdlib.h>
 /**
  * main-prints out a random password
- * Return-0 on success
+ * Return:-0 on success
  */
-#define PASSWORD_LENGTH 10
 
 int main(void)
 {
-	char password[PASSWORD_LENGTH + 1];
-	char charset[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-	int i;
+	int c = 0, r = 0;
+	time_t t;
 
-	srand(time(NULL));
-	for (i = 0; i < PASSWORD_LENGTH; i++)
+	srand((unsigned int) time(&t));
+	while (c < 2772)
 	{
-		int index;
-
-		index = rand() % sizeof(charset);
-		password[i] = charset[index];
+		r = rand() % 128;
+		if ((c + r) > 2772)
+		{
+			break;
+		}
+		c = c + r;
+		printf("%c", r);
 	}
-	password[PASSWORD_LENGTH] = '\0';
-	printf("%s\n", password);
+	printf("%c\n", 2772 - c);
 	return (0);
 }
