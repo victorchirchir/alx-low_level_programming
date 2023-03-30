@@ -6,17 +6,19 @@
  */
 char *rot13(char *s)
 {
-	int i = 0;
+	int i = 0, j;
+	char old[]="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char new[]="NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	while (*(s + i) != '\0')
 	{
-		if ((s[i] >= 'a' && s[i] <= 'm') || (s[i] >= 'A' && s[i] <= 'M'))
+		for (j = 0; j < 52; j++)
 		{
-			s[i] = s[i] + 13;
-		}
-		else if ((s[i] >= 'n' && s[i] <= 'z') || (s[i] >= 'N' && s[i] <= 'Z'))
-		{
-			s[i] = s[i] - 13;
+			if (*(s + i) == old[j])
+			{
+				*(s + i) = new[j];
+				break;
+			}
 		}
 		i++;
 	}
