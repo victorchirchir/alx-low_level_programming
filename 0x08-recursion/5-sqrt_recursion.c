@@ -16,28 +16,27 @@ int _sqrt_recursion(int n)
 	}
 	else
 	{
-		return (square_root(n, n/2));
+		return (square_root(n, n / 2));
 	}
 }
 /**
  * square_root-returns natural square root of a no
  * @n:number to be checked
- * @l:lower range
- * @h:higher range
+ * @g:first guess
  * Return:int  square root of number
  */
 int square_root(int n, int g)
 {
 	int ng;
 
-	ng = (g + n/g) / 2;
+	ng = (g + (n / g)) / 2;
 	if (ng >= g)
 	{
 		return (g);
 	}
 	else
 	{
-		return square_root(n, ng);
+		return (square_root(n, ng));
 	}
 
 }
