@@ -10,13 +10,13 @@ int _sqrt_recursion(int n)
 	{
 		return (-1);
 	}
-	if (n == 1 || n == 0)
+	else if (n == 1 || n == 0)
 	{
 		return (n);
 	}
 	else
 	{
-		return (square_root(n, 1, n));
+		return (square_root(n, n/2));
 	}
 }
 /**
@@ -26,28 +26,20 @@ int _sqrt_recursion(int n)
  * @h:higher range
  * Return:int  square root of number
  */
-int square_root(int n, int l, int h)
+int square_root(int n, int g)
 {
-	int m, sq;
+	int ng;
 
-	if (l > h)
+	ng = (g + n/g) / 2;
+	if (ng >= g)
 	{
-		return (-1);
-	}
-	m = (l + h) / 2;
-	sq = m * m;
-	if (sq == n)
-	{
-		return (m);
-	}
-	else if (sq > n)
-	{
-		return (square_root(n, l, m - 1));
+		return (g);
 	}
 	else
 	{
-		return (square_root(n, m + 1, h));
+		return square_root(n, ng);
 	}
+
 }
 
 
