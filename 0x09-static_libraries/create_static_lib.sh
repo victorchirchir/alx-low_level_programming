@@ -1,7 +1,3 @@
-!#/bin/bash
-SRC = $(ls *.c)
-for file in $SRC
-do
-	gcc $file
-done
+#!/bin/bash
+gcc -c *.c
 ar rcs liball.a *.o
