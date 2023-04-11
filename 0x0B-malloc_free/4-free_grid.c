@@ -3,7 +3,7 @@
 /**
  *free_grid-frees two dimensional greed
  *@grid:grid to be freed
- *@height of the grid
+ *@height:of the grid
  *Return:void
  */
 void free_grid(int **grid, int height)
