@@ -3,59 +3,76 @@
 #include <stdio.h>
 #include <ctype.h>
 /**
+ * count_words-helper func to count words in a string
+ * @s:string passed
+ * Return:int - no of words in string
+ */
+int count_words(char *s)
+{
+	int flag, i, count = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] == ' ' || s[i] == '\0')
+		{
+			flag = 0;
+		}
+		else if (flag == 0)
+		{
+			flag = 1;
+			count++;
+		}
+	}
+	return (count);
+}
+
+/**
  *strtow-splits a string into words
  *@str:string to be split
  *Return:char pointer to split string
  */
 char **strtow(char *str)
 {
-	int i, j, k, x, count = 0;
-	char **words;
+	int i, len = 0, k = 0, x = 0, count, s, e;
+	char **words, *word;
 
-	if (str == NULL || str == 0)
+	while (str[len] != '\0')
 	{
+		len++;
+	}
+	count = count_words(str);
+	if (count == 0)
 		return (NULL);
-	}
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (isspace(str[i]) && !isspace(str[i - 1]))
-		{
-			count++;
-		}
-	}
-	count++;
 	words = malloc(sizeof(char *) * (count + 1));
 	if (words == NULL)
-	{
 		return (NULL);
-	}
-	j = 0;
-	for (i = 0; str[i] != '\0'; i++)
+	for (i = 0; i <= len; i++)
 	{
-		if (!isspace(str[i]))
+		if (str[i] == ' ' || str[i] == '\0')
 		{
-			k = i;
-			while (!isspace(str[k]) && str[k] != '\0')
+			if (x)
 			{
+				e = i;
+				word = malloc(sizeof(char) * (x + 1));
+				if (word == NULL)
+					return (NULL);
+				while (s < e)
+				{
+					*word++ = str[s++];
+				}
+				*word = '\0';
+				words[k] = word - x;
 				k++;
+				x = 0;
 			}
-			words[j] = malloc(sizeof(char) * (k - i + 1));
-			if (words[j] == NULL)
-			{
-				return (NULL);
-			}
-			for (x = 0; x < k - i; x++)
-			{
-				words[j][x] = str[i + x];
-			}
-			words[j][k - i] = '\0';
-			j++;
-			i = k;
+		}
+		else if (x++ == 0)
+		{
+			s = i;
 		}
 	}
-	words[j] = NULL;
-	return (words);
-	free(words);
+		words[k] = NULL;
+		return (words);
 }
 
 
