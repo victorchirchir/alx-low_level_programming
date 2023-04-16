@@ -92,8 +92,6 @@ int main(int argc, char *argv[])
 	num1 = string_to_int(argv[1]);
 	num2 = string_to_int(argv[2]);
 	result = num1 * num2;
-	printf("%d\n", num1);
-	printf("%d\n", num2);
 	print_number(result);
 	_putchar('\n');
 	return (0);
