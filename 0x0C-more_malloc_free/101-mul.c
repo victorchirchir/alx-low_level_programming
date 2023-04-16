@@ -70,6 +70,21 @@ void print_number(int number)
 	}
 }
 /**
+ * print_string-prints out a string
+ * @s-string to be printed
+ * Return:void
+ */
+void print_string(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		_putchar(s[i]);
+	}
+	_putchar('\n');
+}
+/**
  * main - multiplies two positive numbers
  * @argc:no of arguments
  * @argv:list of strings passed
@@ -78,15 +93,16 @@ void print_number(int number)
 int main(int argc, char *argv[])
 {
 	int num1, num2, result;
+	char *s = "Error";
 
 	if (argc != 3)
 	{
-		printf("Error\n");
+		print_string(s);
 		return (98);
 	}
 	if (!is_number(argv[1]) || !is_number(argv[2]))
 	{
-		printf("Error\n");
+		print_string(s);
 		return (98);
 	}
 	num1 = string_to_int(argv[1]);
