@@ -71,7 +71,7 @@ void print_number(int number)
 }
 /**
  * print_string-prints out a string
- * @s-string to be printed
+ * @s:string to be printed
  * Return:void
  */
 void print_string(char *s)
