@@ -17,17 +17,17 @@ int main(int argc, char *argv[])
 	calc = get_op_func(argv[2]);
 	if (argc != 4)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
 	if (argv[2][1])
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(99);
 	}
 	if (calc == NULL)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(99);
 	}
 	printf("%d\n", calc(num1, num2));
