@@ -1,5 +1,5 @@
-#ifndef HEADER_FILE
-#define HEADER_FILE
+#ifndef _CALC_H_
+#define _CALC_H_
 int op_add(int a, int b);
 int op_sub(int a, int b);
 int op_mul(int a, int b);
