@@ -8,10 +8,7 @@
  */
 int op_add(int a, int b)
 {
-	int sum;
-
-	sum = a + b;
-	return (sum);
+	return (a + b);
 }
 /**
  * op_sub-gets difference between two numbers
@@ -21,10 +18,7 @@ int op_add(int a, int b)
  */
 int op_sub(int a, int b)
 {
-	int diff;
-
-	diff = a - b;
-	return (diff);
+	return (a - b);
 }
 /**
  * op_mul-multiplies two numbers
@@ -34,10 +28,7 @@ int op_sub(int a, int b)
  */
 int op_mul(int a, int b)
 {
-	int mul;
-
-	mul = a * b;
-	return (mul);
+	return (a * b);
 }
 /**
  * op_div-divides two numbers
@@ -47,15 +38,12 @@ int op_mul(int a, int b)
  */
 int op_div(int a, int b)
 {
-	int div;
-
 	if (b == 0)
 	{
 		printf("Error\n");
 		return (100);
 	}
-	div = a / b;
-	return (div);
+	return (a / b);
 }
 /**
  * op_mod-two numbers
@@ -65,13 +53,11 @@ int op_div(int a, int b)
  */
 int op_mod(int a, int b)
 {
-	int mod;
 
 	if (b == 0)
 	{
 		printf("Error\n");
 		return (100);
 	}
-	mod = a % b;
-	return (mod);
+	return (a % b);
 }
