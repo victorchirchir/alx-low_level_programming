@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	if (calc == NULL)
 	{
 		printf("Error");
-		exit(100);
+		exit(99);
 	}
 	printf("%d\n", calc(num1, num2));
 	return (0);
