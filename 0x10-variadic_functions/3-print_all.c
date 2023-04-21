@@ -11,7 +11,8 @@ void print_all(const char * const format, ...)
 {
 	char *s;
 	va_list pa;
-	int j = 0;
+	int j = 0, k;
+	char cifs[] = "cifs";
 
 	va_start(pa, format);
 	while (format && format[j])
@@ -32,16 +33,18 @@ void print_all(const char * const format, ...)
 				if (s == NULL)
 				{
 					printf("(nil)");
+					break;
 				}
-				else
-				{
-					printf("%s", s);
-				}
+				printf("%s", s);
 				break;
 		}
-		if ((format[j + 1]) && (strchr("cifs", format[j])))
+		k = 0;
+		while (cifs[k])
 		{
-			printf(", ");
+			if ((format[j + 1]) && (format[j] == cifs[k]))
+			{
+				printf(", ");
+			} k++;
 		} j++;
 	}
 	printf("\n");
