@@ -1,6 +1,7 @@
 #include "lists.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 /**
  * _strlen-calcs the len of a string
  * @s:string
@@ -25,7 +26,7 @@ int _strlen(char *s)
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_node;
-	char *s;
+	char *s = strdup(str);
 	unsigned int len;
 
 	new_node = malloc(sizeof(list_t));
@@ -33,7 +34,6 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-	s = strdup(str);
 	if (s == NULL)
 	{
 		free(new_node);
