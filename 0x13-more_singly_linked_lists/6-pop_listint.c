@@ -7,9 +7,13 @@
  */
 int pop_listint(listint_t **head)
 {
-	int r;
+	int r = -1;
 	listint_t *next_node;
 
+	if (head == NULL)
+	{
+		return (-1);
+	}
 	if (head)
 	{
 		r = (*head)->n;
