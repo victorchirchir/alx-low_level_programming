@@ -15,8 +15,7 @@ size_t free_listint_safe(listint_t **h)
 	{
 		return (0);
 	}
-	while (*h != NULL)
-	{
+	do {
 		sub = ((*h)->next) - (*h);
 		if (sub > 0)
 		{
@@ -31,7 +30,7 @@ size_t free_listint_safe(listint_t **h)
 			break;
 		}
 		count++;
-	}
+	} while (*h);
 	return (count);
 }
 
