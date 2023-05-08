@@ -8,10 +8,9 @@ int count_string(char *str)
 {
 	int len;
 
-	while (*str != '\0')
+	for (len = 0; str[len];)
 	{
 		len++;
-		str++;
 	}
 	return (len);
 }
