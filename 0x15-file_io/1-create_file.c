@@ -24,13 +24,12 @@ int count_string(char *str)
 int create_file(const char *filename, char *text_content)
 {
 	int fd, len, w;
-	mode_t mode = S_IRUSR | S_IWUSR;
 
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, mode);
+	fd = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 	if (fd < 0)
 	{
 		return (-1);
